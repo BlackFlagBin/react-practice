@@ -43,10 +43,9 @@
     "whatwg-fetch": "^1.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "NODE_ENV=dev webpack-dev-server --progress --colors",
+    "mock": "node --harmony ./mock/server.js",
+    "build": "rm -rf ./build && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --colors"
   },
   "eslintConfig": {
     "extends": "react-app"
